@@ -19,6 +19,7 @@
 #include "dialogs/AccountDialog.h"
 #include "dialogs/CloneDialog.h"
 #include "host/Accounts.h"
+#include "conf/Settings.h"
 #include <QAbstractItemModel>
 #include <QFileDialog>
 #include <QMenu>

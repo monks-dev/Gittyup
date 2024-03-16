@@ -11,6 +11,7 @@
 #define MENUBAR
 
 #include <QMenuBar>
+#include <qaction.h>
 
 class History;
 class RepoView;
@@ -90,6 +91,7 @@ private:
   QAction *mToggleLog;
   QAction *mToggleView;
   QAction *mToggleMenuBar;
+  QAction *mToggleRepoView;
   StateAction *mToggleMaximize;
 
   // Repository

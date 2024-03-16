@@ -141,6 +141,9 @@ static Hotkey toggleViewHotkey = HotkeyManager::registerHotkey(
 static Hotkey toggleMenuBarHotkey = HotkeyManager::registerHotkey(
     "Ctrl+B", "view/toggleMenuBar", "View/Toggle Menu Bar");
 
+static Hotkey toggleRepoViewHotkey = HotkeyManager::registerHotkey(
+    "Ctrl+H", "view/toggleRepoView", "View/Toggle Repo View");
+
 static Hotkey configureRepositoryHotkey = HotkeyManager::registerHotkey(
     nullptr, "repository/configure", "Repository/Configure Repository");
 
@@ -531,6 +534,13 @@ MenuBar::MenuBar(QWidget *parent) : QMenuBar(parent) {
   connect(mToggleMenuBar, &QAction::triggered, [this] {
     setHidden(!isHidden());
     Settings::instance()->setValue(Setting::Id::HideMenuBar, isHidden());
+  });
+
+  mToggleRepoView = viewMenu->addAction(tr("Hide Repo View"));
+  toggleRepoViewHotkey.use(mToggleRepoView);
+  connect(mToggleRepoView, &QAction::triggered, [this] {
+    setHidden(!isHidden());
+    Settings::instance()->setValue(Setting::Id::HideRepoView, isHidden());
   });
 
   // Repository

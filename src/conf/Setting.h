@@ -42,6 +42,7 @@ public:
     OpenSubmodulesInTabs,
     OpenAllReposInTabs,
     HideMenuBar,
+    HideRepoView,
     ShowAvatars,
     ShowMaximized,
     AutoCollapseAddedFiles,
